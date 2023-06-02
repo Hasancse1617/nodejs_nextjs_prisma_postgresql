@@ -27,7 +27,8 @@
           "withNodeModules": true
         }
       }
-    ]
+    ],
+    "import/newline-after-import": ["error", { "count": 0 }]
   },
   "plugins": ["prettier"]
 }
