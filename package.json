@@ -4,10 +4,13 @@
   "description": "node js next js prisma postgresql project",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "server": "nodemon index.js",
+    "admin": "npm run dev --prefix front_app",
+    "dev": "concurrently \" npm run server \" \" npm run admin \""
   },
   "license": "MIT",
   "devDependencies": {
+    "concurrently": "^8.1.0",
     "eslint": "8.2.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-prettier": "^8.8.0",
