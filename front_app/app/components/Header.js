@@ -1,20 +1,20 @@
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 const Header = () =>{
     return(
         <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
         <div className="container">
-          <NavLink className="navbar-brand" to="/">NEWS</NavLink>
+          <a className="navbar-brand" to="/">NEWS</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="collapsibleNavbar">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <NavLink to="/posts?page=1" className="nav-link">Post List</NavLink>
+                <a to="/posts?page=1" className="nav-link">Post List</a>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/create">Create Post</NavLink>
+                <a className="nav-link" to="/create">Create Post</a>
               </li>
             </ul>
           </div>

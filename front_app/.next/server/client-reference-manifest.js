@@ -232,7 +232,11 @@ self.__RSC_MANIFEST={
     }
   },
   "edgeSSRModuleMapping": {},
-  "cssFiles": {},
+  "cssFiles": {
+    "G:\\mern\\nodejs_nextjs_prisma_postgresql_project\\front_app\\app\\layout": [
+      "static/css/app/layout.css"
+    ]
+  },
   "clientModules": {
     "G:\\mern\\nodejs_nextjs_prisma_postgresql_project\\front_app\\node_modules\\next\\dist\\client\\components\\app-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
@@ -905,6 +909,13 @@ self.__RSC_MANIFEST={
         "app-client-internals:static/chunks/app-client-internals.js"
       ],
       "async": false
+    },
+    "G:\\mern\\nodejs_nextjs_prisma_postgresql_project\\front_app\\app\\global.css#": {
+      "id": "null",
+      "name": "default",
+      "chunks": [
+        "static/css/app/layout.css"
+      ]
     }
   }
 }
