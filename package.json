@@ -2,9 +2,9 @@
   "name": "nodejs_nextjs_prisma_postgresql_project",
   "version": "1.0.0",
   "description": "node js next js prisma postgresql project",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "server": "nodemon index.js",
+    "server": "nodemon src/index.js",
     "admin": "npm run dev --prefix front_app",
     "dev": "concurrently \" npm run server \" \" npm run admin \""
   },
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "dotenv": "^16.1.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "prisma": "^4.15.0"
   }
 }

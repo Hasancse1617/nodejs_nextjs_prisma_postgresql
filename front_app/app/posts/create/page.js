@@ -1,14 +1,14 @@
-import React from 'react';
+
 
 function page() {
   return (
     <>
     <div className="create-post-area">
-            <Toaster position="top-right" reverseOrder={true}/>
+            {/* <Toaster position="top-right" reverseOrder={true}/> */}
             <div className="container">
                 <div className="create-post-content col-md-8 offset-md-2">
                     <h3>Create Post</h3>
-                    <form onSubmit={handleSubmit}>
+                    {/* <form onSubmit={handleSubmit}>
                         <div className="row">
                             <div className="form-group col-md-6">
                             <label htmlFor="inputAddress2">Post title</label>
@@ -25,7 +25,7 @@ function page() {
                         </div>
                         
                         <button type="submit" className="btn btn-primary">Create</button>
-                    </form>
+                    </form> */}
                 </div>
             </div>
         </div>
