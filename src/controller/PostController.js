@@ -59,3 +59,7 @@ module.exports.editPost = async(req, res)=>{
         return res.status(500).json({errors: [{msg: error.message}]});
     }
 }
+
+module.exports.updatePost = async(req, res)=>{
+    
+}
