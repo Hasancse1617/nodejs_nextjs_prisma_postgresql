@@ -1,11 +1,11 @@
 const app = require("express");
 const router = app.Router();
 // const { allPost, allComment, createPost, createComment, editPost, updatePost, deletePost } = require("../controller/PostController");
-const { allPost } = require("../controller/PostController");
+const { allPost, createPost } = require("../controller/PostController");
 
 router.get("/all-post/:page", allPost);
 // router.get("/all-comment/:id", allComment);
-// router.post("/create-post", createPost);
+router.post("/create-post", createPost);
 // router.post("/create-comment/:id", createComment);
 // router.get("/edit-post/:id", editPost);
 // router.post("/update-post/:id", updatePost);
