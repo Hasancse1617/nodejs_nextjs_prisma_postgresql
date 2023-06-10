@@ -94,5 +94,11 @@ module.exports.updatePost = async(req, res)=>{
 }
 
 module.exports.deletePost = async(req, res)=>{
-    
+    const id = Number(req.params.id);
+    try {
+        const response = await prisma.post.delete({where:{id}});
+        return res.status(200).json({message: "Post deleted Successfully"});
+    } catch (error) {
+        return res.status(500).json({errors: [{msg: error.message}]});
+    }
 }
