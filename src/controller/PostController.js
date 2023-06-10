@@ -92,3 +92,7 @@ module.exports.updatePost = async(req, res)=>{
         }
     }
 }
+
+module.exports.deletePost = async(req, res)=>{
+    
+}
