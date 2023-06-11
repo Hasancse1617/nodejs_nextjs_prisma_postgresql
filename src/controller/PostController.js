@@ -49,3 +49,7 @@ module.exports.createPost = async(req, res) =>{
         }
     }
 }
+
+module.exports.editPost = async(req, res)=>{
+    
+}
