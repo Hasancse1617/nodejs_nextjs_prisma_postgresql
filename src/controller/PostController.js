@@ -61,5 +61,34 @@ module.exports.editPost = async(req, res)=>{
 }
 
 module.exports.updatePost = async(req, res)=>{
-    
+    const id = Number(req.params.id);
+    const {title, image, content} = req.body;
+    const errors = [];
+    if(title === ''){
+        errors.push({msg: 'Title is required'});
+    }
+    if(image === ''){
+        errors.push({msg:'Image is required'});
+    }
+    if(content === ''){
+        errors.push({msg:'Content is required'});
+    }
+
+    if(errors.length !== 0){
+        return res.status(400).json({errors});
+    }else{
+        try {
+            const response = await prisma.post.update({
+                where:{id},
+                data:{
+                    title,
+                    image,
+                    content
+                }
+            });
+            return res.status(200).json({message: "Post updated Successfully"});
+        } catch (error) {
+            return res.status(500).json({errors: [{msg: error.message}]});
+        }
+    }
 }
