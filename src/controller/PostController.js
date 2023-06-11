@@ -51,5 +51,11 @@ module.exports.createPost = async(req, res) =>{
 }
 
 module.exports.editPost = async(req, res)=>{
-    
+    const id = Number(req.params.id);
+    try {
+        const response = await prisma.post.findUnique({where:{id}});
+        return res.status(200).json({response});
+    } catch (error) {
+        return res.status(500).json({errors: [{msg: error.message}]});
+    }
 }
