@@ -1,6 +1,13 @@
 import React from 'react';
 
-function page() {
+async function getData() {
+    const res = await fetch('http://localhost:5000/api/all-post/1')
+    if (!res.ok) {
+      throw new Error('Failed to fetch data')
+    }
+    return res.json()
+}
+function Page() {
   return (
     <>
     <div className="post-list-area">
@@ -40,4 +47,4 @@ function page() {
     </>
   )
 }
-export default page;
+export default Page;

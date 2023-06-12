@@ -6,7 +6,7 @@ module.exports.allPost = async(req, res)=>{
     const page = req.params.page;
     const perPage = 5;
     const skip = (page - 1) * perPage;
-    console.log("Hhhhhhhh")
+
     try {
         const count = await prisma.post.count();
         const response = await prisma.post.findMany({skip: skip, take: perPage, orderBy:[{updatedAt:'desc'}]});
