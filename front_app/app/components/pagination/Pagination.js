@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "next/link";
 import './Pagination.css';
 
 const Pagination = ({page,perPage,count,pageLink}) => {
@@ -27,7 +27,7 @@ const Pagination = ({page,perPage,count,pageLink}) => {
     const links = () =>{
         const store = [];
         for (let i = startloop; i <= endloop; i++) {
-            store.push(<li key={i}><Link  className={`${i==page?"active":""}`} to={`${pageLink}?page=${i}`}>{i}</Link></li>);
+            store.push(<li key={i}><Link  className={`${i==page?"active":""}`} href={`${pageLink}?page=${i}`}>{i}</Link></li>);
         }
         return store;
     }
@@ -35,7 +35,7 @@ const Pagination = ({page,perPage,count,pageLink}) => {
         if(parseInt(page) < totalPages){
             return (
                <li>
-                   <Link to={`${pageLink}?page=${parseInt(page) + 1 }`} ><i class="fas fa-long-arrow-alt-right"></i></Link>
+                   <Link href={`${pageLink}?page=${parseInt(page) + 1 }`} ><i class="fas fa-long-arrow-alt-right"></i></Link>
                </li>
             );
         }
@@ -44,7 +44,7 @@ const Pagination = ({page,perPage,count,pageLink}) => {
         if(parseInt(page) > 1){
             return (
                <li>
-                   <Link  to={`${pageLink}?page=${parseInt(page) - 1 }`} ><i class="fas fa-long-arrow-alt-left"></i></Link>
+                   <Link  href={`${pageLink}?page=${parseInt(page) - 1 }`} ><i class="fas fa-long-arrow-alt-left"></i></Link>
                </li>
             );
         }
