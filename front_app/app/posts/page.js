@@ -34,7 +34,7 @@ async function Page({searchParams }) {
                                     <td style={{paddingLeft:'95px'}}><Link title="Click here to go single post" href={`/post/${post.id}`}><img width="50" height="50" src={`${post.image}`}/>{ post.title }</Link></td>
                                     <td>{ moment().format('MMMM Do YYYY', post.createdAt) }</td>
                                     <td>
-                                        <Link href={`/edit/${post.id}`} title="Edit"><i className="fa-regular fa-pen-to-square"></i></Link>
+                                        <Link href={`/posts/edit/${post.id}`} title="Edit"><i className="fa-regular fa-pen-to-square"></i></Link>
                                         {/* <a href="#" title="Delete" onClick={()=>deleteAction(post.id)}><i className="fa-solid fa-trash-can"></i></a> */}
                                     </td>
                                 </tr>
