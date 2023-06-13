@@ -20,7 +20,17 @@ function Page({ params }) {
         
     }
     useEffect(()=>{
-       
+        fetch(`http://localhost:5000/api/edit-post/${params.id}`)
+        .then((res)=>res.json())
+        .then((data)=>{
+            if(data.response){
+                setState({
+                    title: data.response.title,
+                    image: data.response.image,
+                    content: data.response.content
+                });
+             }
+        })  
     },[params.id]);
   return (
     <>
