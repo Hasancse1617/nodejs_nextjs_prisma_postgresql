@@ -1,9 +1,10 @@
 "use client"
+import { useRouter } from 'next/navigation';
 
 import { useEffect, useState } from "react";
 
 function Page({ params }) {
-    console.log(params.id);
+    const router = useRouter();
     const [state, setState] = useState({
         title: "",
         image: "",
@@ -17,7 +18,20 @@ function Page({ params }) {
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
-        
+        fetch(`http://localhost:5000/api/update-post/${params.id}`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(state)
+        })
+        .then((res)=>res.json())
+        .then((data)=>{
+            if(data.message){
+                router.push('/posts?page=1');
+             }
+        })
     }
     useEffect(()=>{
         fetch(`http://localhost:5000/api/edit-post/${params.id}`)

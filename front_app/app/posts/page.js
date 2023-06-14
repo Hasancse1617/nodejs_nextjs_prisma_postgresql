@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Pagination from "../components/pagination/Pagination";
 
 async function getData(page) {
-    const res = await fetch(`http://localhost:5000/api/all-post/${page}`)
+    const res = await fetch(`http://localhost:5000/api/all-post/${page}`,{ cache: 'no-store' })
     if (!res.ok) {
       throw new Error('Failed to fetch data')
     }

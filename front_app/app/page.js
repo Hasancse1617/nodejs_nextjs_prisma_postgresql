@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 async function getData() {
-    const res = await fetch('http://localhost:5000/api/all-post/1')
+    const res = await fetch('http://localhost:5000/api/all-post/1',{ cache: 'no-store' })
     if (!res.ok) {
       throw new Error('Failed to fetch data')
     }
