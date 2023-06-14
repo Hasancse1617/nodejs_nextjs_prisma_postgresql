@@ -18,6 +18,7 @@ module.exports.allPost = async(req, res)=>{
 
 module.exports.createPost = async(req, res) =>{
     const {title, image, content} = req.body;
+    console.log(title)
     const errors = [];
     if(title === ''){
         errors.push({msg: 'Title is required'});
