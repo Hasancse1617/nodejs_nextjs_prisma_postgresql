@@ -1,6 +1,14 @@
 import React from 'react';
 
-function Page() {
+async function getData(id) {
+    const res = await fetch(`http://localhost:5000/api/single-post/${id}`,{ cache: 'no-store' })
+    if (!res.ok) {
+      throw new Error('Failed to fetch data')
+    }
+    return res.json()
+}
+async function Page({params}) {
+    const {response:post} = await getData(params.id);
   return (
     <>
        <div className="single-post-area">
